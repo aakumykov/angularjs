@@ -36,31 +36,16 @@ app.config(function($routeProvider){
 	$routeProvider
 	.when("/",{
 		//tempalte: "<h1>Начальная страница</h1>"
-		tempalteUrl: 'main.html'
+		templateUrl: 'main.html'
 	})
 	.when("/add",{
 		//tempalte: "<h2>добавки мне</h2>"
-		tempalteUrl: 'add.html'
+		templateUrl: 'add.html'
 	})
 	.when("/list",{
-		tempalteUrl: "list.html"
+		templateUrl: "list.html"
 	})
 	.otherwise({
-		tempalteUrl: "main.html"
+		templateUrl: "main.html"
 	});
 });
-
-// app.config(function($routeProvider) {
-//     $routeProvider
-//     .when("/", {
-//         templateUrl : "main.htm",
-//     })
-//     .when("/london", {
-//         templateUrl : "london.htm",
-//         controller : "londonCtrl"
-//     })
-//     .when("/paris", {
-//         templateUrl : "paris.htm",
-//         controller : "parisCtrl"
-//     });
-// });
