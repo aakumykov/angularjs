@@ -6,9 +6,8 @@ app.controller("myCtrl", function($scope) {
 	$scope.msgColor = "";
 
 	$scope.addItem = function(){
-		alert('addItem');
 		var d = $scope.newDistro;
-		if (!d) { alert('Ниче нет'); return; }
+		if (!d) { return; }
 		if (-1 == $scope.products.indexOf(d) ) {
 			$scope.products.push(d);
 			$scope.msgText = "Элемент " + d + " добавлен"
@@ -22,7 +21,6 @@ app.controller("myCtrl", function($scope) {
 	};
 
 	$scope.removeItem = function(item) {
-		alert('removeItem');
 		var name = $scope.products[item];
 		if ( $scope.products.splice(item,1) ) {
 			$scope.msgText = "Элемент '" + name + "'' удалён"
