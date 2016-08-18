@@ -1,0 +1,13 @@
+.itemRemovePoint {
+	background-color: lightgrey;
+}
+
+.itemRemovePoint:hover {
+	background-color: red;
+}
+
+.ui-state-highlight { 
+	height: 2.5em; 
+	line-height: 2.2em; 
+	background-color: lightyellow;
+}
