@@ -4,32 +4,24 @@
 		<meta charset="utf-8">
 		<title>Учебная программа</title>
 		
-		<script src="lib/vendor/js/jquery-1.12.4.js"></script>
-		<script src="lib/vendor/js/jquery-ui.js"></script>
-		<script src="lib/vendor/js/angular.min.js"></script>
-		<script src="lib/vendor/js/angular-route.js"></script>
+		<script src="vendor/js/jquery-1.12.4.js"></script>
+		<script src="vendor/js/jquery-ui.js"></script>
+		<script src="vendor/js/angular.min.js"></script>
+		<script src="vendor/js/angular-route.js"></script>
 		<script src="lib/js/tutorial.js"></script>
-		<script>
-			$( function() {
-				$( "#sortable" ).sortable({
-					placeholder: "ui-state-highlight"
-				});
-				$( "#sortable" ).disableSelection();
-			} );
-		</script>
-
-		<link rel='stylesheet' href="lib/vendor/css/w3.css"/>
-		<link rel="stylesheet" href="lib/vendor/fonts/font-awesome.min.css">
+		
+		<link rel='stylesheet' href="vendor/css/w3.css"/>
+		<link rel="stylesheet" href="vendor/fonts/font-awesome.min.css">
 		<link rel='stylesheet' href="lib/css/tutorial.css"/>
 	</head>
 	<body>
 		<div ng-app="myShoppingList" ng-controller="myCtrl" ng-cloack>
-			<header class='w3-container w3-teal w3-padding-16'>
-				Дистрибутивы Linux
-				<div>
-					<a href='#/'>Главная</a>
-					<a href='#list'>Список</a>
-					<a href='#add'>Добавить</a>
+			<header class='w3-container w3-teal w3-padding-6'>
+				<h2>Дистрибутивы Linux</h2>
+				<div class="w3-btn-group w3-padding-bottom">
+					<a class="w3-btn w3-white w3-hover-dark-grey" href='#/'>Главная</a>
+					<a class="w3-btn w3-yellow w3-hover-orange" href='#list'>Список</a>
+					<a class="w3-btn w3-green w3-hover-blue" href='#add'>Добавить</a>
 				</div>
 			</header>
 			<div ng-view></div>
