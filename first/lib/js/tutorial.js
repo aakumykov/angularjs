@@ -1,12 +1,31 @@
 var app = angular.module("myShoppingList", ["ngRoute"]);
 
+app.config(function($routeProvider){
+	$routeProvider
+	.when("/",{
+		templateUrl: 'main.html',
+		controller: 'myCtrl'
+	})
+	.when("/add",{
+		templateUrl: 'add.html',
+		controller: 'myCtrl'
+	})
+	.when("/list",{
+		templateUrl: "list.html",
+		controller: 'myCtrl'
+	})
+	.otherwise({
+		templateUrl: "main.html",
+		controller: 'myCtrl'
+	});
+});
+
 app.controller("myCtrl", function($scope, $http) {
 	$scope.products = ["Debian", "Mandriva", "Ubuntu"];
 	$scope.msgText = "";
 	$scope.msgColor = "";
 
-	$scope.qwerty = 'qwerty из контроллера'
-	$scope.qwerty2 = 'qwerty2 из контроллера'
+	$scope.siteAddress = 'http://127.0.0.1';
 
 	$scope.addItem = function(){
 		//alert($scope.newDistro);
@@ -46,29 +65,24 @@ app.controller("myCtrl", function($scope, $http) {
 		// });
 	};
 
-	$scope.testQwerty = function(){
-		alert('testQwerty: '+$scope.qwerty);
+	$scope.testHttp = function(){
+		var address = $scope.siteAddress;
+
+		$http({
+			method: 'GET',
+			url: address,
+		}).then(
+			function successCallback(response) {
+				$scope.httpStatusCode = response.status;
+				$scope.httpStatusText = response.statusText;
+				$scope.httpHeaders = response.headers['Referer'];
+				$scope.httpConfig = response.config;
+				$scope.httpData = typeof(response.data);
+			}, 
+			function errorCallback(response) {
+				
+			}
+		);
 	};
 });
-
-app.config(function($routeProvider){
-	$routeProvider
-	.when("/",{
-		templateUrl: 'main.html',
-		controller: 'myCtrl'
-	})
-	.when("/add",{
-		templateUrl: 'add.html',
-		controller: 'myCtrl'
-	})
-	.when("/list",{
-		templateUrl: "list.html",
-		controller: 'myCtrl'
-	})
-	.otherwise({
-		templateUrl: "main.html",
-		controller: 'myCtrl'
-	});
-});
-
 
