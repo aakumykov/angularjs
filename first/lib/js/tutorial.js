@@ -4,7 +4,7 @@ app.config(function($routeProvider){
 	$routeProvider
 	.when("/",{
 		templateUrl: 'main.html',
-		controller: 'myCtrl'
+		controller: 'mainCtrl'
 	})
 	.when("/add",{
 		templateUrl: 'add.html',
@@ -86,3 +86,30 @@ app.controller("myCtrl", function($scope, $http) {
 	};
 });
 
+app.controller('mainCtrl', function($scope, $http){
+	$scope.msgColor = 'blue';
+	$scope.msgText = 'готов к началу работы';
+
+	$scope.sendData = function(){
+		var title = $scope.title;
+		var body = $scope.body;
+		if (title && body) {
+			$http({
+				method: 'POST',
+				url: 'http://127.0.0.1',
+				data: {
+					title: title,
+					body: body
+				}
+			}).then(
+				function successCallback(response){
+					alert('успех');
+				},
+				function errorCallback(response){
+					$scope.msgColor = 'red';
+					$scope.msgText = response.status+', '+response.statusText;
+				}
+			);
+		};
+	};
+});

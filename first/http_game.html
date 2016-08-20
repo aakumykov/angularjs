@@ -1,0 +1,17 @@
+<div class='w3-container w3-green'>
+	<h3>Игра с $http</h3>
+</div>
+
+<form class="w3-container w3-padding">
+	<input type='text' class='w3-input w3-validate w3-border' required ng-model='siteAddress' />
+	<input type="button" class="w3-btn w3-green" value="Давай!" ng-click="testHttp()" />
+</form>
+
+<div class='w3-container'>
+	<div class="w3-text-green">Адрес: {{siteAddress}}</div>
+	<div class="w3-text-green">status: {{httpStatusCode}}</div>
+	<div class="w3-text-green">statusText: {{httpStatusText}}</div>
+	<div class="w3-text-green">headers: {{httpHeaders}}</div>
+	<div class="w3-text-green">config: {{httpConfig}}</div>
+	<div class="w3-text-green">data: {{httpData}}</div>
+</div>

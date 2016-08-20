@@ -1,17 +1,6 @@
-<div class='w3-container w3-green'>
-	<h3>Игра с $http</h3>
-</div>
-
 <form class="w3-container w3-padding">
-	<input type='text' class='w3-input w3-validate w3-border' required ng-model='siteAddress' />
-	<input type="button" class="w3-btn w3-green" value="Давай!" ng-click="testHttp()" />
+	<input type='text' class='w3-input w3-border w3-margin-bottom' ng-model='title' />
+	<textarea class='w3-input w3-border w3-margin-bottom' ng-model='body'></textarea>
+	<button class='w3-btn w3-btn-block w3-teal w3-round-large w3-ripple w3-hover-green' ng-click='sendData()'>Давай!</button>
 </form>
-
-<div class='w3-container'>
-	<div class="w3-text-green">Адрес: {{siteAddress}}</div>
-	<div class="w3-text-green">status: {{httpStatusCode}}</div>
-	<div class="w3-text-green">statusText: {{httpStatusText}}</div>
-	<div class="w3-text-green">headers: {{httpHeaders}}</div>
-	<div class="w3-text-green">config: {{httpConfig}}</div>
-	<div class="w3-text-green">data: {{httpData}}</div>
-</div>
+<div class='w3-panel w3-text-{{msgColor}} w3-center'>{{msgText}}</div>
